@@ -61,7 +61,10 @@ const Navbar = () => {
         <ul className="gap-5 menu-horizontal px-1 text-xl ">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <div className="text-5xl mr-3 tooltip" data-tip="Profile">
+        <div
+          className="text-5xl mr-3 tooltip"
+          data-tip={user?.email || "No email"}
+        >
           <PiUserCircleFill></PiUserCircleFill>
         </div>
         {user ? (

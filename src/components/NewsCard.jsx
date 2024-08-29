@@ -5,8 +5,10 @@ import { IoMdShare } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { BsFillEyeFill } from "react-icons/bs";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ news }) => {
+  const { details, _id } = news;
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = () => {
@@ -37,7 +39,15 @@ const NewsCard = ({ news }) => {
           <img src={news.image_url} alt="" />
         </div>
         <div>
-          <p
+          {details.length > 500 ? (
+            <p>
+              {details.slice(0, 200)}{" "}
+              <Link to={`/news/${_id}`} className="text-[#FF8C47] font-semibold">Read More...</Link>
+            </p>
+          ) : (
+            <p>{details}</p>
+          )}
+          {/* <p
             className={`overflow-hidden transition-all ${
               isExpanded ? "max-h-full" : "max-h-24"
             }`}
@@ -49,7 +59,7 @@ const NewsCard = ({ news }) => {
             onClick={toggleReadMore}
           >
             {isExpanded ? "Read Less" : "Read More"}
-          </button>
+          </button> */}
         </div>
         <hr className="my-4" />
         <div className="flex justify-between items-center">
