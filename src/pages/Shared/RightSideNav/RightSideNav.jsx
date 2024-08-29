@@ -1,8 +1,8 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-import qZone1 from "../../../../public/media/qZone1.png";
-import qZone2 from "../../../../public/media/qZone2.png";
-import qZone3 from "../../../../public/media/qZone3.png";
+import qZone1 from "/media/qZone1.png";
+import qZone2 from "/media/qZone2.png";
+import qZone3 from "/media/qZone3.png";
 
 const RightSideNav = () => {
   return (

@@ -1,7 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import { PiUserCircleFill } from "react-icons/pi";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { Result } from "postcss";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const navLinks = (
     <>
       <li>
@@ -50,9 +64,18 @@ const Navbar = () => {
         <div className="text-5xl mr-3 tooltip" data-tip="Profile">
           <PiUserCircleFill></PiUserCircleFill>
         </div>
-        <Link to="/login">
-          <button className="bg-[#403F3F] text-white px-4 py-2">Login</button>
-        </Link>
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="bg-[#403F3F] text-white px-4 py-2"
+          >
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="bg-[#403F3F] text-white px-4 py-2">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );

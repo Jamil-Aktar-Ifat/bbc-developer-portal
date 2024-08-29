@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SlCalender } from "react-icons/sl";
 import moment from "moment";
-import img_1 from "../../../../public/media/1.png";
-import img_2 from "../../../../public/media/2.png";
-import img_3 from "../../../../public/media/3.png";
+import img_1 from "/media/1.png";
+import img_2 from "/media/2.png";
+import img_3 from "/media/3.png";
 
 const LeftSideNav = () => {
   const [categories, setCategories] = useState([]);
