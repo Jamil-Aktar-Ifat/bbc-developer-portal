@@ -22,15 +22,24 @@ const RightSideNav = () => {
       {/* find us on  */}
       <div className="p-4">
         <h2 className="text-3xl mb-3">Find Us On</h2>
-        <a className="flex items-center gap-3 border rounded-t-md p-3" href="">
+        <a
+          className="flex items-center gap-3 border rounded-t-md p-3 hover:bg-slate-800 hover:text-white"
+          href=""
+        >
           <FaFacebook></FaFacebook>
           Facebook
         </a>
-        <a className="flex items-center gap-3 border-x  p-3" href="">
+        <a
+          className="flex items-center gap-3 border-x  p-3 hover:bg-slate-800 hover:text-white"
+          href=""
+        >
           <FaTwitter></FaTwitter>
           Twitter
         </a>
-        <a className="flex items-center gap-3 border rounded-b-md p-3" href="">
+        <a
+          className="flex items-center gap-3 border rounded-b-md p-3 hover:bg-slate-800 hover:text-white"
+          href=""
+        >
           <FaInstagram></FaInstagram>
           Instagram
         </a>

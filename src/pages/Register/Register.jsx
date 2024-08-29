@@ -1,13 +1,26 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, email, password);
+
+    // create user
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .then((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -49,7 +62,7 @@ const Register = () => {
               <input
                 className="w-3/4 p-4 "
                 placeholder="Enter your password"
-                type=" password"
+                type="password"
                 name="password"
                 id="password"
                 required
